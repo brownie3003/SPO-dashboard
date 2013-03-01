@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="highchart/js/highcharts.js"></script>
+    <script src="highchart/js/highcharts-more.js"></script>
+    <script src="justGage.1.0.1/resources/js/raphael.2.1.0.min.js"></script>
+    <script src="justGage.1.0.1/resources/js/justgage.1.0.1.min.js"></script>
+   
+    
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Balanced Score Card</li>
+              <li class="active"><a href="#">Overview</a></li>
+              <li><a href="#">Finance</a></li>
+              <li><a href="#">Customer</a></li>
+              <li><a href="#">Internal Process</a></li>
+              <li><a href="#">Learning and Development</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        
+        <div class="span9">
+          <div class="row-fluid">
+            <div class="span2" id="Metric1" style="width: 174px; height: 140px;">
+              <script>
+                var g = new JustGage({
+                  id: "Metric1", 
+                  value: 84, 
+                  min: 0,
+                  max: 100,
+                  title: "Project Delivery",
+                  levelColorsGradient: true
+                }); 
+              </script>
+            </div>
+            <div class="span2" id="Metric2" style="width: 174px; height: 140px;">
+              <script>
+                var g = new JustGage({
+                  id: "Metric2", 
+                  value: 48, 
+                  min: 0,
+                  max: 100,
+                  title: "RFS Delivery"
+                }); 
+              </script>
+            </div>
+            <div class="span2" id="Metric3" style="width: 174px; height: 140px;">
+              <script>
+                var g = new JustGage({
+                  id: "Metric3", 
+                  value: 96.43, 
+                  min: 0,
+                  max: 100,
+                  title: "SLA Compliance"
+                }); 
+              </script>
+            </div>
+            <div class="span2" id="Metric4" style="width: 174px; height: 140px;">
+              <script>
+                var g = new JustGage({
+                  id: "Metric4", 
+                  value: 27.7, 
+                  min: 0,
+                  max: 100,
+                  title: "Contractors in Post"
+                }); 
+              </script>
+            </div>
+            <div class="span2" id="Metric5" style="width: 174px; height: 140px; text-align: center;">
+              <h2 style="color: #7CFC00;">-&pound16.2m</h2>
+              <h4>Budget Variance YTD</h3>
+            </div>
+          </div>
+          
+            <div class="tabbable" style="width: 973px; margin:0px;"> <!-- Only required for left/right tabs -->
+              <ul class="nav nav-tabs">
+                <li class="active" style="width: 20%; text-align: center"><a href="#tab1" data-toggle="tab">Projects</a></li>
+                <li id ="litab2" style="width: 20%; text-align: center"><a id="atab2" href="#tab2" data-toggle="tab">RFS</a></li>
+                <li style="width: 20%; text-align: center"><a href="#tab3" data-toggle="tab">SLA</a></li>
+                <li style="width: 20%; text-align: center"><a href="#tab4" data-toggle="tab">Workforce</a></li>
+                <li style="width: 20%; text-align: center"><a href="#tab5" data-toggle="tab">Finance</a></li>
+              </ul>
+            <div class="tab-content">
+              <!-- tab-pane needs to be active to write graphical data to it -->
+              <div class="tab-pane active" id="tab1">
+<script type="text/javascript">
+  $(function() {
+    var chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'tab1',
+            type: 'line'
+        },
+        title: {
+            text: 'Projects Expected on Time and Budget'
+        },
+        xAxis: {
+            categories: ['Oct \'11','Jan \'12','Apr \'12','Jul \'12','Oct \'12','Jan \'13']
+        },
+        yAxis: {
+            title: {
+                text: 'Project delivery'
+            },
+            plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+        },
+        tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        this.x +': '+ this.y +'%';
+                }
+        },
+        series: [{
+            name: 'Projects expected on Time and Budget',
+            data: [72,83,87,88,90,88]
+        }]
+    });
+});
+</script>
+              </div>
+              <div class="tab-pane" id="tab2">
+                <script type="text/javascript">
+                  $(document).ready(function() {
+                    $('#tab2').on('show', function() {
+                      var chart1 = new Highcharts.Chart({
+                        chart: {
+                          renderTo: 'tab1',
+                          type: 'line'
+                        },
+                        title: {
+                          text: 'Projects Expected on Time and Budget'
+                        },
+                        xAxis: {
+                          categories: ['Oct \'11','Jan \'12','Apr \'12','Jul \'12','Oct \'12','Jan \'13']
+                        },
+                        yAxis: {
+                          title: {
+                          text: 'Project delivery'
+                        },
+                        plotLines: [{
+                          value: 0,
+                          width: 1,
+                          color: '#808080'
+                        }]
+                        },
+                        tooltip: {
+                        formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        this.x +': '+ this.y +'%';
+                        }
+                        },
+                        series: [{
+                        name: 'Projects expected on Time and Budget',
+                        data: [72,83,87,88,90,88]
+                        }]
+                      });
+                    });
+                  });
+                </script> 
+              </div>
+              <div class="tab-pane" id="tab3">
+<script type="text/javascript">
+  $(document).ready(function() {
+    var chart3 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'tab3',
+            type: 'line'
+        },
+        title: {
+            text: 'Projects Expected on Time and Budget'
+        },
+        xAxis: {
+            categories: ['Oct \'11','Jan \'12','Apr \'12','Jul \'12','Oct \'12','Jan \'13']
+        },
+        yAxis: {
+            title: {
+                text: 'Project delivery'
+            },
+            plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+        },
+        tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        this.x +': '+ this.y +'%';
+                }
+        },
+        series: [{
+            name: 'Projects expected on Time and Budget',
+            data: [72,83,87,88,90,88]
+        }]
+    });
+});
+</script>
+              </div>
+              <div class="tab-pane" id="tab4">
+<script type="text/javascript">
+ $(document).ready(function () {
+
+            var chart;
+            var options = {
+                chart: {
+                    renderTo: 'tab4'
+                },
+                credits: {
+                    enabled: false
+                },
+                title: {
+                    text: null
+                },
+                legend: {
+                    enabled: false
+                },
+                plotArea: {
+                    shadow: null,
+                    borderWidth: null,
+                    backgroundColor: null
+                },
+                xAxis: {
+                    categories: []
+                },
+                yAxis: {
+                    title: {
+                        text: 'This is the y-axis'
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        return '<b>' + this.x + '</b><br/>' + this.series.name + ': ' + this.y + '<br/>' + 'Total: ' +this.point.stackTotal;
+                    }
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function () {
+                                return Math.round(this.y);
+                            },
+                            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Series A',
+                    data: [353, 2378],
+                    type: 'column'
+                }, {
+                    name: 'Series B',
+                    data: [321, 23],
+                    type: 'column'
+                }, {
+                    name: 'Series C',
+                    data: [],
+                    type: 'column'
+                }, {
+                    name: 'Series D',
+                    data: [],
+                    type: 'column'
+                }]
+            }
+        });  // end doc ready
+ </script>
+              </div>
+              <div class="tab-pane" id="tab5">
+              </div>
+</div>
+          </div><!--/span-->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  </body>
+</html>
