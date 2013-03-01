@@ -1,0 +1,1 @@
+Our aim is to display MI data from a database. Specifically we are looking at doing a dashboard for SPO using bootstrap as the front end. The back end will probably be a SQL database and we may use Ruby as the server side language.
